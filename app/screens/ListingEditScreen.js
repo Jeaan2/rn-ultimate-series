@@ -21,7 +21,7 @@ const categories = [
 
 function ListingEditScreen(props) {
     return (
-        <Screen>
+        <Screen style={styles.container}>
             <AppForm
                  initialValues={{title: '', price: '', description: '', category: null}}
                  onSubmit={values => console.log(values)}
@@ -59,5 +59,11 @@ function ListingEditScreen(props) {
         </Screen>
     );
 }
+
+const styles = StyleSheet.create({
+    container: { 
+        padding: 10,
+    }
+})
 
 export default ListingEditScreen;
