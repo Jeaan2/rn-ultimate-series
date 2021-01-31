@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import { View, StyleSheet, Platform, TouchableWithoutFeedback, Modal, Button, FlatList } from 'react-native';
+import { View, StyleSheet, Platform, TouchableWithoutFeedback, Modal, Button, FlatList, TextInput } from 'react-native';
 import {MaterialCommunityIcons} from '@expo/vector-icons'
-import { TextInput } from 'react-native-gesture-handler';
 
 
 import colors from '../config/colors';
@@ -18,7 +17,7 @@ function AppPicker({icon, items, onSelectItem, selectedItem, placeholder}) {
             <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
                 <View style={styles.container}>
                     {icon && <MaterialCommunityIcons  name={icon} size={20} color={colors.medium} style={styles.icon}/>}
-                    <AppText style={styles.text}>{selectedItem ? selectedItem.label : placeholder}</AppText>
+                    {selectedItem ? <AppText style={styles.text}>{selectedItem.label}</AppText> : <AppText style={styles.placeholder}>{placeholder}</AppText>}
                     <MaterialCommunityIcons  name="chevron-down" size={20} color={colors.medium} />
                 </View>
             </TouchableWithoutFeedback>
@@ -54,6 +53,10 @@ const styles = StyleSheet.create({
     },
     text: { 
         flex:1,
+    },
+    placeholder: {
+        color: colors.medium,
+        flex:1
     }
 
 })
