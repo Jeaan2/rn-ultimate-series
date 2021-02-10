@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import { AppForm, AppFormField, SubmitButton, AppFormPicker } from '../components/Forms';
 import CategoryPickerItem from '../components/CategoryPickerItem';
 import FormImagePicker from '../components/Forms/FormImagePicker';
-import useLocation from '../Hooks/useLocation';
+import useLocation from '../hooks/useLocation';
 
 const validationSchema = Yup.object().shape({
     title: Yup.string().required().min(1).label("Title"),
