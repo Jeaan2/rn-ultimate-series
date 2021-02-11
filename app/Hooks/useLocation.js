@@ -18,7 +18,6 @@ export default useLocation = () => {
   };
 
   useEffect(() => {
-      console.log("useLocation")
     getLocation();
   }, []);
 

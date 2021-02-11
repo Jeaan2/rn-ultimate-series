@@ -1,8 +1,7 @@
 export default Object.freeze({
-    LISTING_DETAILS: 'ListingDetails',
-    LOGIN: 'Login',
-    REGISTER: 'Register',
-    LISTING_EDIT: 'ListingEdit',
-    MESSAGES: 'Messages',
-
-})
+  LISTING_DETAILS: "ListingDetails",
+  LISTING_EDIT: "ListingEdit",
+  LOGIN: "Login",
+  MESSAGES: "Messages",
+  REGISTER: "Register",
+});
