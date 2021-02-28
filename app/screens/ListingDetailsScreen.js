@@ -1,5 +1,5 @@
 import React from "react";
-import { View,StyleSheet } from "react-native";
+import { View,StyleSheet, KeyboardAvoidingView } from "react-native";
 import {Image} from 'react-native-expo-image-cache';
 
 import colors from "../config/colors";
@@ -10,6 +10,7 @@ function ListingDetailsScreen({ route }) {
   const listing = route.params;
 
   return (
+    <KeyboardAvoidingView>
     <View>
       <Image style={styles.image} tint="light" preview={{uri: listing.images[0].thumbnailUrl}}uri={listing.images[0]} />
       <View style={styles.detailsContainer}>
@@ -23,7 +24,9 @@ function ListingDetailsScreen({ route }) {
           />
         </View>
       </View>
+      <ContactSellerForm listing={listing}/>
     </View>
+    </KeyboardAvoidingView>
   );
 }
 
