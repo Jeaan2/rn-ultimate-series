@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import AppLoading from 'expo-app-loading';
@@ -9,9 +11,13 @@ import AuthNavigator from "./app/navigation/AuthNavigator";
 import AuthContext from "./app/auth/context";
 import authStorage from "./app/auth/storage";
 import { navigationRef } from "./app/navigation/rootNavigation";
+import logger from './app/utility/logger';
+
+logger.start();
 
 
 export default function App() {
+  logger.log(new Error("Error in app"));
   const [user, setUser] = useState()
   const [isReady, setIsReady] = useState(false)
 
