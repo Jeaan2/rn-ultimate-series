@@ -19,6 +19,8 @@ function ListingsScreen({ navigation }) {
   }, []);
 
   return (
+    <>
+    <ActivityIndicator visible={getListingsApi.loading} />
     <Screen style={styles.screen}>
       {getListingsApi.error && (
         <>
@@ -26,7 +28,7 @@ function ListingsScreen({ navigation }) {
           <Button title="Retry" onPress={getListingsApi.request} />
         </>
       )}
-      <ActivityIndicator visible={getListingsApi.loading} />
+      
       <FlatList
         data={getListingsApi.data}
         keyExtractor={(listing) => listing.id.toString()}
@@ -41,6 +43,7 @@ function ListingsScreen({ navigation }) {
         )}
       />
     </Screen>
+    </>
   );
 }
 
